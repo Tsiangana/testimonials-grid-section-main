@@ -22,6 +22,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: sans-serif;
     }
 
     body{
@@ -39,7 +40,7 @@
     .content{
         width: 86.5%;
         height: 500px;
-        border: var(--border);
+        /*border: var(--border);*/
         display: grid;
         grid-template-rows: 250px 250px;
         grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
@@ -48,6 +49,59 @@
     .content .box{
         box-shadow: var(--box-shadow);
         border-radius: 10px;
+        padding: 20px;
+    }
+    .content .box .nav{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 10px;
+    }
+    .content .box .nav img{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        margin-right: 15px;
+    }
+    .content .box .nav h1{
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    .content .box1 .nav h1, .box2 .nav h1, .box5 .nav h1{
+        color: #fff;
+    }
+    .content .box .nav span{
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--Light_gray);
+    }
+
+    .content .box1 .sub-content .tittle, .box5 .sub-content .tittle{
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+    .content .box2 .sub-content .tittle, .box3 .sub-content .tittle, .box4 .sub-content .tittle{
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: -10px;
+    }
+    .content .box1 .sub-content .tittle{
+        margin-bottom: -10px;
+    }
+    .content .box5 .sub-content .tittle{
+        margin-bottom: 10px;
+    }
+
+    .content .box .sub-content .paragrath{
+        color: var(--Light_gray);
+        font-size: 0.9rem;
+    }
+
+    .content .box1 .sub-content .tittle, .box2 .sub-content .tittle, .box5 .sub-content .tittle{
+        color: #fff;
     }
 
     .content .box1{
@@ -71,17 +125,16 @@
 
     @media (max-width:935px) {
         .content{
-            grid-template-rows: 250px 250px 250px 250px 250px;
-            grid-template-columns: 2fr;
+            grid-template-rows: repeat(5, 250px);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
         }
         .content .box1{
-            grid-row: span 1;
+            grid-column: 1 / 1;
         }
-
         .content .box3{
             grid-row: span 1;
         }
         .content .box5{
-            grid-row: span 1;
+            grid-column: span 1;
         }
     }
