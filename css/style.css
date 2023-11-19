@@ -50,6 +50,7 @@
         box-shadow: var(--box-shadow);
         border-radius: 10px;
         padding: 20px;
+        /*overflow-y: scroll;*/
     }
     .content .box .nav{
         width: 100%;
@@ -136,5 +137,12 @@
         }
         .content .box5{
             grid-column: span 1;
+        }
+    }
+
+    @media (max-width:1200px) {
+        .content .box{
+            overflow-y: scroll;
+            overflow-x: hidden;
         }
     }
